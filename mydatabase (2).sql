@@ -93,7 +93,7 @@ CREATE TABLE `userlogin` (
 -- Dumping data for table `userlogin`
 --
 
-INSERT INTO `userlogin` (`t_id`, `time_created`, `time_logged_in`, `time_logged_off`, `time_updated_info`, 'u_id') VALUES
+INSERT INTO `userlogin` (`t_id`, `time_created`, `time_logged_in`, `time_logged_off`, `time_updated_info`, `u_id`) VALUES
 (1, '07:55:56', '08:00:00', '08:10:00', '07:57:00','101'),
 (2, '09:55:56', '10:00:00', '10:05:00', '10:03:00','102'),
 (3, '06:00:00', '09:00:05', '10:40:20', '10:00:00','103');
@@ -131,7 +131,7 @@ COMMIT;
 -- Indexes for table `userlogin`
 --
 ALTER TABLE `userlogin`
-  ADD FOREIGN KEY (`U_id`);
+  ADD FOREIGN KEY (`u_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
