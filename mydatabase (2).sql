@@ -43,7 +43,7 @@ INSERT INTO `admin` (`admin_ID`, `username`, `email`) VALUES
 (103, 'naledi_magapa', 'naledim@gmail.com'),
 (104, 'bright@8', 'bright@8.gmail.com'),
 (105, 'mareka_3', 'marekakhensani@gmail.com'),
-(106, 'chaane_gogontle', 'gogontlechaane.gc@gmail.com');
+
 
 -- --------------------------------------------------------
 
@@ -66,12 +66,13 @@ INSERT INTO `user` (`user_id`, `username`, `f_name`, `l_name`) VALUES
 ('101', 'maemp@1', 'Pauline', 'Maepa'),
 ('102', 'maepalerato@10', 'lerato', 'maepa'),
 ('103', 'malebolebza', 'Malebo', 'Nyaloku'),
-('107', 'nampi*7', 'nampi', 'moloto'),
-('108', 'karabom@gmail.com', 'Karabo', 'Morukhu'),
-('109', 'rele1bogile', 'Refilwe', 'Morukhu'),
-('110', 'happy6&', 'Happy', 'Mabuza'),
-('111', 'kamosedibe', 'Kamogelo', 'Sedibe'),
-('112', 'koketso$rhona', 'Koketso', 'Rhona');
+('104', 'nampi*7', 'nampi', 'moloto'),
+('105', 'karabom@gmail.com', 'Karabo', 'Morukhu'),
+('106', 'rele1bogile', 'Refilwe', 'Morukhu'),
+('107', 'happy6&', 'Happy', 'Mabuza'),
+('108', 'kamosedibe', 'Kamogelo', 'Sedibe'),
+('109', 'koketso$rhona', 'Koketso', 'Rhona');
+('110', 'koketso$rhona', 'Koketso', 'Rhona');
 
 -- --------------------------------------------------------
 
@@ -80,21 +81,29 @@ INSERT INTO `user` (`user_id`, `username`, `f_name`, `l_name`) VALUES
 --
 
 CREATE TABLE `userlogin` (
-  `t_id` int(4) NOT NULL,
+  `t_id` int(3) NOT NULL,
   `time_created` time NOT NULL,
   `time_logged_in` time NOT NULL,
   `time_logged_off` time NOT NULL,
-  `time_updated_info` time NOT NULL
+  `time_updated_info` time NOT NULL,
+ `u_id`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='information about user activities';
 
 --
 -- Dumping data for table `userlogin`
 --
 
-INSERT INTO `userlogin` (`t_id`, `time_created`, `time_logged_in`, `time_logged_off`, `time_updated_info`) VALUES
-(1, '07:55:56', '08:00:00', '08:10:00', '07:57:00'),
-(101, '09:55:56', '10:00:00', '10:05:00', '10:03:00'),
-(102, '11:20:00', '11:22:05', '11:40:20', '11:35:00');
+INSERT INTO `userlogin` (`t_id`, `time_created`, `time_logged_in`, `time_logged_off`, `time_updated_info`, 'u_id') VALUES
+(1, '07:55:56', '08:00:00', '08:10:00', '07:57:00','101'),
+(2, '09:55:56', '10:00:00', '10:05:00', '10:03:00','102'),
+(3, '06:00:00', '09:00:05', '10:40:20', '10:00:00','103');
+(4, '07:00:00', '0:22:05', '11:40:20', '11:35:00','104');
+(5, '14:00:00', '14:08:05', '20:10:20', '11:35:00','105');
+(6, '11:20:00', '11:22:05', '11:40:20', '11:35:00','106');
+(7, '11:20:00', '11:22:05', '11:40:20', '11:35:00','107');
+(8, '11:20:00', '11:22:05', '11:40:20', '11:35:00','108');
+(9, '11:20:00', '11:22:05', '11:40:20', '11:35:00','109');
+(10, '11:20:00', '11:22:05', '11:40:20', '11:35:00','110');
 
 --
 -- Indexes for dumped tables
@@ -118,6 +127,11 @@ ALTER TABLE `user`
 ALTER TABLE `userlogin`
   ADD PRIMARY KEY (`t_id`);
 COMMIT;
+
+-- Indexes for table `userlogin`
+--
+ALTER TABLE `userlogin`
+  ADD FOREIGN KEY (`U_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
