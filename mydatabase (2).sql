@@ -38,41 +38,42 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_ID`, `username`, `email`) VALUES
-(101, 'kgmaduna01@gmail.com', 'kgmaduna01@gmail.com'),
-(102, 'mananam01@gmail.com', 'mananam@gmail.com'),
-(103, 'naledi_magapa', 'naledim@gmail.com'),
-(104, 'bright@8', 'bright@8.gmail.com'),
-(105, 'mareka_3', 'marekakhensani@gmail.com'),
+('A1', 'kgmaduna01@gmail.com', 'kgmaduna01@gmail.com'),
+('A2', 'mananam01@gmail.com', 'mananam@gmail.com'),
+('A3', 'naledi_magapa', 'naledim@gmail.com'),
+('A4', 'bright@8', 'bright@8.gmail.com'),
+('A5', 'mareka_3', 'marekakhensani@gmail.com'),
 
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
---
+-- 
 
 CREATE TABLE `user` (
   `user_id` varchar(3) NOT NULL,
   `username` varchar(100) NOT NULL,
   `f_name` varchar(100) NOT NULL,
-  `l_name` varchar(100) NOT NULL
+  `l_name` varchar(100) NOT NULL,
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='This table contains information about the user';
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `f_name`, `l_name`) VALUES
-('101', 'maemp@1', 'Pauline', 'Maepa'),
-('102', 'maepalerato@10', 'lerato', 'maepa'),
-('103', 'malebolebza', 'Malebo', 'Nyaloku'),
-('104', 'nampi*7', 'nampi', 'moloto'),
-('105', 'karabom@gmail.com', 'Karabo', 'Morukhu'),
-('106', 'rele1bogile', 'Refilwe', 'Morukhu'),
-('107', 'happy6&', 'Happy', 'Mabuza'),
-('108', 'kamosedibe', 'Kamogelo', 'Sedibe'),
-('109', 'koketso$rhona', 'Koketso', 'Rhona');
-('110', 'koketso$rhona', 'Koketso', 'Rhona');
+INSERT INTO `user` (`user_id`, `username`, `f_name`, `l_name`,`admnID`) VALUES
+('101', 'kgmaduna01@gmail.com', 'kgmauna01@gmail.com', 'Kgotso','Maduna','A1'),
+('102', 'mananam@gmail.com', 'mananam@gmail.com','Malebo', 'Manana','A2'),
+('103', 'naledimagapa', 'naledimagapa@gmail.com', 'Naledi',''),
+('104', 'nampi*7', 'nampi', 'moloto',''),
+('105', 'karabom@gmail.com', 'Karabo', 'Morukhu',''),
+('106', 'rele1bogile', 'Refilwe', 'Morukhu','A3'),
+('107', 'happy6&', 'Happy', 'Mabuza',''),
+('108', 'kamosedibe', 'Kamogelo', 'Sedibe',''),
+('109', 'koketso$rhona', 'Koketso', 'Rhona','');
+('110', 'koketso$rhona', 'Koketso', 'Rhona','A7');
 
 -- --------------------------------------------------------
 
@@ -132,6 +133,9 @@ COMMIT;
 --
 ALTER TABLE `userlogin`
   ADD FOREIGN KEY (`u_id`);
+
+  ALTER TABLE `user`
+  ADD FOREIGN KEY (`admnID`)
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
